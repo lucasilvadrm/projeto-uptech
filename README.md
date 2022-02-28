@@ -14,7 +14,7 @@
 
 ## :dart: About
 
-Projeto desenvolvido como forma de avaliação.
+Project developed as a form of evaluation.
 
 ## Screenshots
 
