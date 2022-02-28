@@ -2,154 +2,155 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./public/styles/styles.css" />
-    <title>UpTech</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./public/styles/styles.css" />
+  <title>UpTech</title>
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <h1>Ótima escolha!</h1>
+  <header>
+    <div class="header-container">
+      <h1>Ótima escolha!</h1>
+
+      <p>
+        Obrigado por comprar na RCHLO! Preencha seus dados para efetivar a
+        compra.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="container-product">
+        <div class="product-information">
+          <h2>Sua compra</h2>
+
+          <div class="image">
+            <img
+              src="https://static.riachuelo.com.br/RCHLO/14247984003/portrait/279d0565feb361cff852a6a792ffdb5c89890ba3.jpg"
+              alt="t-shirt" />
+          </div>
+
+          <div class="product">
+            <h3>Produto</h3>
 
             <p>
-                Obrigado por comprar na RCHLO! Preencha seus dados para efetivar a
-                compra.
+              Camiseta Manga Curta Malha Tie Dye The Simpsons Preto Riachuelo
             </p>
+
+            <h3>Cor</h3>
+            <p>Preto</p>
+
+            <h3>Tamanho</h3>
+            <p>G</p>
+
+            <h3>Preço</h3>
+            <p class="price">R$ 69,90</p>
+          </div>
         </div>
-    </header>
 
-    <main>
-        <div class="container">
-            <div class="container-product">
-                <div class="product-information">
-                    <h2>Sua compra</h2>
+        <div class="total-quantity">
+          <div class="input">
+            <label for="quantity">Quantidade:</label>
+            <input type="number" min="1" name="quantity" id="quantity" value="1" onclick="calculateTotal()">
+          </div>
+          <div class="input">
+            <label for="totalPrice">Total:</label>
+            <input type="text" name="totalPrice" id="totalPrice" value=" R$ 69,90" disabled>
+          </div>
+        </div>
+      </div>
 
-                    <div class="image">
-                        <img src="https://static.riachuelo.com.br/RCHLO/14247984003/portrait/279d0565feb361cff852a6a792ffdb5c89890ba3.jpg"
-                            alt="t-shirt" />
-                    </div>
+      <form class="form" id="form">
+        <div class="user-info">
+          <div class="personal-data">
+            <h2>Dados Pessoais</h2>
 
-                    <div class="product">
-                        <h3>Produto</h3>
+            <div class="input">
+              <label for="fullname">Nome Completo</label>
 
-                        <p>
-                            Camiseta Manga Curta Malha Tie Dye The Simpsons Preto Riachuelo
-                        </p>
-
-                        <h3>Cor</h3>
-                        <p>Preto</p>
-
-                        <h3>Tamanho</h3>
-                        <p>G</p>
-
-                        <h3>Preço</h3>
-                        <p class="price">R$ 69,90</p>
-                    </div>
-                </div>
-
-                <div class="total-quantity">
-                    <div class="input">
-                        <label for="quantity">Quantidade:</label>
-                        <input type="number" min="1" name="quantity" id="quantity" value="1" onclick="calculateTotal()">
-                    </div>
-                    <div class="input">
-                        <label for="totalPrice">Total:</label>
-                        <input type="text" name="totalPrice" id="totalPrice" value=" R$ 69,90" disabled>
-                    </div>
-                </div>
+              <input type="text" maxlength="200" id="fullname" />
+              <i><img class="img-success" src="./public/img/success-icon.svg" alt=""></i>
+              <i><img class="img-error" src="./public/img/error-icon.svg" alt=""></i>
+              <small>Error message</small>
             </div>
 
-            <form class="form" id="form">
-                <div class="user-info">
-                    <div class="personal-data">
-                        <h2>Dados Pessoais</h2>
+            <div class="input">
+              <label for="email">Email</label>
 
-                        <div class="input">
-                            <label for="fullname">Nome Completo</label>
+              <input type="email" placeholder="email@exemplo.com" maxlength="300" id="email" />
+              <i><img class="img-success" src="./public/img/success-icon.svg" alt=""></i>
+              <i><img class="img-error" src="./public/img/error-icon.svg" alt=""></i>
+              <small>Error message</small>
+            </div>
 
-                            <input type="text" maxlength="200" id="fullname" />
-                            <i><img class="img-success" src="./public/img/success-icon.svg" alt=""></i>
-                            <i><img class="img-error" src="./public/img/error-icon.svg" alt=""></i>
-                            <small>Error message</small>
-                        </div>
+            <div class="input">
+              <label for="cpf">CPF</label>
 
-                        <div class="input">
-                            <label for="email">Email</label>
+              <input type="text" placeholder="000.000.000-00" maxlength="14" data-js="cpf" id="cpf" />
+              <i><img class="img-success" src="./public/img/success-icon.svg" alt=""></i>
+              <i><img class="img-error" src="./public/img/error-icon.svg" alt=""></i>
+              <small>Error message</small>
+            </div>
 
-                            <input type="email" placeholder="email@exemplo.com" maxlength="300" id="email" />
-                            <i><img class="img-success" src="./public/img/success-icon.svg" alt=""></i>
-                            <i><img class="img-error" src="./public/img/error-icon.svg" alt=""></i>
-                            <small>Error message</small>
-                        </div>
+            <div class="checkbox">
+              <span>
+                <input type="checkbox" class="checkbox" />
 
-                        <div class="input">
-                            <label for="cpf">CPF</label>
+                Quero receber a newsletter da RCHLO!
+              </span>
+            </div>
+          </div>
 
-                            <input type="text" placeholder="000.000.000-00" maxlength="14" data-js="cpf" id="cpf" />
-                            <i><img class="img-success" src="./public/img/success-icon.svg" alt=""></i>
-                            <i><img class="img-error" src="./public/img/error-icon.svg" alt=""></i>
-                            <small>Error message</small>
-                        </div>
+          <div class="credit-card">
+            <h2>Cartão de Crédito</h2>
 
-                        <div class="checkbox">
-                            <span>
-                                <input type="checkbox" class="checkbox" />
+            <div class="input">
+              <label for="numbercvv">Número - CVV</label>
 
-                                Quero receber a newsletter da RCHLO!
-                            </span>
-                        </div>
-                    </div>
+              <input type="text" maxlength="3" id="numbercvv"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+              <i><img class="img-success" src="./public/img/success-icon.svg" alt=""></i>
+              <i><img class="img-error" src="./public/img/error-icon.svg" alt=""></i>
+              <small>Error message</small>
+            </div>
 
-                    <div class="credit-card">
-                        <h2>Cartão de Crédito</h2>
+            <div class="input">
+              <label>Bandeira</label>
+              <select name="flag" id="flag">
+                <option selected disabled value="initial">
+                  Selecione uma bandeira
+                </option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="Visa">Visa</option>
+                <option value="American Express">American Express</option>
+              </select>
 
-                        <div class="input">
-                            <label for="numbercvv">Número - CVV</label>
+              <small>Error message</small>
+            </div>
 
-                            <input type="text" maxlength="3" id="numbercvv"
-                                onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
-                            <i><img class="img-success" src="./public/img/success-icon.svg" alt=""></i>
-                            <i><img class="img-error" src="./public/img/error-icon.svg" alt=""></i>
-                            <small>Error message</small>
-                        </div>
-
-                        <div class="input">
-                            <label>Bandeira</label>
-                            <select name="flag" id="flag">
-                                <option selected disabled value="initial">
-                                    Selecione uma bandeira
-                                </option>
-                                <option value="Mastercard">Mastercard</option>
-                                <option value="Visa">Visa</option>
-                                <option value="American Express">American Express</option>
-                            </select>
-
-                            <small>Error message</small>
-                        </div>
-
-                        <div class="input">
-                            <label>Validade</label>
-                            <input type="text" placeholder="mm/yyyy" maxlength="7" id="shelf-life" />
-                            <i><img class="img-success" src="./public/img/success-icon.svg" alt=""></i>
-                            <i><img class="img-error" src="./public/img/error-icon.svg" alt=""></i>
-                            <small>Error message</small>
-                        </div>
-                    </div>
-                </div>
-
-                <button type="submit">Confirmar Pedido</button>
-            </form>
+            <div class="input">
+              <label>Validade</label>
+              <input type="text" placeholder="mm/yyyy" maxlength="7" id="shelf-life" />
+              <i><img class="img-success" src="./public/img/success-icon.svg" alt=""></i>
+              <i><img class="img-error" src="./public/img/error-icon.svg" alt=""></i>
+              <small>Error message</small>
+            </div>
+          </div>
         </div>
-    </main>
 
-    <!-- <script src="./public/js/script.js"></script> -->
-    <script src="./public/js/script.js"></script>
+        <button type="submit">Confirmar Pedido</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- <script src="./public/js/script.js"></script> -->
+  <script src="./public/js/script.js"></script>
 </body>
 
 </html>
