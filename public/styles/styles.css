@@ -1,0 +1,288 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Header */
+header {
+  background-color: #dbd7d778;
+  width: 100%;
+}
+
+.header-container {
+  padding: 2rem 1rem;
+  max-width: 920px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1rem;
+}
+
+/* Main */
+main {
+  display: flex;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.container {
+  /* background-color: aqua; */
+  margin: 0 auto;
+  max-width: 920px;
+  width: 100%;
+  display: flex;
+}
+
+main .container .product-information,
+main .container .container-product .total-quantity {
+  border: 1px solid rgba(128, 128, 128, 0.192);
+  max-width: 300px;
+}
+
+.total-quantity {
+  /* background-color: aqua; */
+  padding: 0.5rem;
+}
+
+main .container .product-information h2 {
+  padding: 1rem;
+  font-size: 2rem;
+  background: #dbd7d778;
+}
+
+main .container .product-information .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+main .container .product-information .image img {
+  max-width: 250px;
+  border: 10px solid #fff;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.09);
+  margin-bottom: 0.5rem;
+}
+
+main .container .product-information .product {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  line-height: 1rem;
+}
+
+main .container .product-information .product h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+main .container .product-information .product p {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+main .container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0.5rem;
+  width: 100%;
+}
+
+button {
+  max-width: 220px;
+  border: none;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+}
+
+main .container form button {
+  margin-right: auto;
+}
+
+main .container form .user-info {
+  display: flex;
+  width: 100%;
+}
+
+/* Form left side */
+main .container form .user-info .personal-data {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  /* background: red; */
+  padding: 0.25rem;
+}
+
+main .container form .user-info .personal-data h2,
+main .container form .user-info .credit-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* inputs */
+select {
+  width: 100%;
+  outline: none;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  padding: 0.6rem;
+  font-size: 1rem;
+}
+
+
+.input {
+  position: relative;
+}
+
+.input label {
+  display: inline-block;
+}
+
+.input i {
+  position: absolute;
+  top: 38px;
+  right: 10px;
+  visibility: hidden;
+}
+
+.input small {
+  visibility: hidden;
+  /* position: absolute; */
+  margin-top: 5px;
+  font-size: 14px;
+  color: #ca4e5e;
+}
+
+.total-quantity .input input {
+  width: 100%;
+  outline: none;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  padding: 0.6rem;
+  font-size: 1rem;
+  /* display: block; */
+}
+
+/* .total-quantity .input label {
+  display: flex;
+} */
+
+main .container form .user-info .personal-data .input input,
+main .container form .user-info .credit-card .input input {
+  width: 100%;
+  outline: none;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  padding: 0.6rem;
+  font-size: 1rem;
+  display: block;
+}
+
+main .container form .user-info .personal-data .success input,
+main .container form .user-info .credit-card .success input {
+  border: 2px solid #4eca64;
+}
+
+main .container form .user-info .personal-data .success i .img-success,
+main .container form .user-info .credit-card .success i .img-success {
+  visibility: visible;
+}
+
+main .container form .user-info .personal-data .error input,
+main .container form .user-info .credit-card .error input {
+  border: 2px solid #ca4e5e;
+}
+
+main .container form .user-info .personal-data .error i .img-error,
+main .container form .user-info .credit-card .error i .img-error {
+  visibility: visible;
+}
+
+main .container form .user-info .personal-data .error small,
+main .container form .user-info .credit-card .error small {
+  visibility: visible;
+}
+
+label {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
+
+.error {
+  font-size: 0.6rem;
+}
+
+.checkbox {
+  padding: 1rem 0;
+}
+
+/* labels */
+main .container form .user-info .credit-card .input label,
+main .container form .user-info .personal-data .input label {
+  display: flex;
+}
+
+/* Form right side */
+main .container form .user-info .credit-card {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 0.25rem;
+}
+
+@media (max-width: 920px) {
+  main .container form .user-info {
+    flex-direction: column;
+  }
+
+  main .container form .user-info .credit-card,
+  main .container form .user-info .personal-data {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  main .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main .container .product-information {
+    margin: 0 auto;
+    max-width: none;
+    width: 100%;
+  }
+
+  main .container .container-product .total-quantity {
+    margin-bottom: 1rem;
+    max-width: none;
+    width: 100%;
+  }
+
+  button {
+    max-width: none;
+    width: 100%;
+  }
+}
