@@ -6,57 +6,75 @@ const numbercvv = document.getElementById('numbercvv')
 const cardFlag = document.getElementById('flag')
 const shelfLife = document.getElementById('shelf-life')
 
+function cleanFields(elementValue) {
+  return elementValue.trim();
+}
+
+const customMessageErrors = {
+  requiredField: "Campo obrigatório!",
+  emailValidation: "Email inválido!",
+  cpfValidation: "CPF inválido!",
+  cardFlagInfo: 'Selecione uma bandeira!',
+  invalidCvv: 'Padrão inválido para o CVV!',
+  shelfLifeValidation: 'Informe o mês e o ano corretamente.'
+}
 
 function liveValidation() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault()
-    // console.log(fullname)
-    console.log(cardFlag.value)
-    // verifyInputs()
+
+    verifyInputs()
   })
 
   fullname.addEventListener('input', e => {
     e.preventDefault()
-    const fullnameValue = fullname.value.trim();
-    if (fullnameValue === '') {
-      errorValidation(fullname, 'Campo obrigatório!')
+
+    const fullnameValue = cleanFields(fullname.value);
+    if (!fullnameValue) {
+      errorValidation(fullname, customMessageErrors.requiredField)
     } else {
       successValidation(fullname)
     }
   })
+
   cpf.addEventListener('input', e => {
     e.preventDefault()
-    const cpfValue = cpf.value.trim();
-    if (cpfValue === '') {
-      errorValidation(cpf, 'Campo obrigatório!')
+
+    const cpfValue = cleanFields(cpf.value);
+
+    if (!cpfValue) {
+      errorValidation(cpf, customMessageErrors.requiredField)
     } else if (cpfValue.length < 14) {
-      errorValidation(cpf, 'CPF Inválido!')
+      errorValidation(cpf, customMessageErrors.cpfValidation)
     } else {
       successValidation(cpf)
     }
+
   })
 
   email.addEventListener('input', e => {
     e.preventDefault()
-    const emailValue = email.value.trim();
-    console.log(emailValue)
-    if (emailValue === '') {
-      errorValidation(email, 'Campo obrigatório!')
+    const emailValue = cleanFields(email.value);
+
+    if (!emailValue) {
+      errorValidation(email, customMessageErrors.requiredField)
     } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
-      errorValidation(email, 'Email inválido!')
+      errorValidation(email, customMessageErrors.emailValidation)
     } else {
       successValidation(email)
     }
+
   })
 
   numbercvv.addEventListener('input', e => {
     e.preventDefault()
-    const numbercvvValue = numbercvv.value.trim();
-    if (numbercvvValue === '') {
-      errorValidation(numbercvv, 'Campo obrigatório!')
+    const numbercvvValue = cleanFields(numbercvv.value);
+
+    if (!numbercvvValue) {
+      errorValidation(numbercvv, customMessageErrors.requiredField)
     } else if (numbercvvValue.length < 3) {
-      errorValidation(numbercvv, 'Padrão inválido para o CVV!')
+      errorValidation(numbercvv, customMessageErrors.invalidCvv)
     } else {
       successValidation(numbercvv)
     }
@@ -64,9 +82,10 @@ function liveValidation() {
 
   cardFlag.addEventListener('input', e => {
     e.preventDefault()
-    const cardFlagValue = cardFlag.value.trim();
+    const cardFlagValue = cleanFields(cardFlag.value);
+
     if (cardFlagValue === 'initial') {
-      errorValidation(cardFlag, 'Selecione uma bandeira!')
+      errorValidation(cardFlag, customMessageErrors.cardFlagInfo)
     } else {
       successValidation(cardFlag)
     }
@@ -74,11 +93,12 @@ function liveValidation() {
 
   shelfLife.addEventListener('input', e => {
     e.preventDefault()
-    const shelfLifeValue = shelfLife.value.trim();
-    if (shelfLifeValue === '') {
-      errorValidation(shelfLife, 'Campo obrigatório!')
+    const shelfLifeValue = cleanFields(shelfLife.value);
+
+    if (!shelfLifeValue) {
+      errorValidation(shelfLife, customMessageErrors.requiredField)
     } else if (shelfLifeValue.length < 7) {
-      errorValidation(shelfLife, 'Informe o mês e o ano corretamente.')
+      errorValidation(shelfLife, customMessageErrors.shelfLifeValidation)
     } else {
       successValidation(shelfLife)
     }
@@ -89,51 +109,50 @@ liveValidation()
 
 function verifyInputs() {
   const fullnameValue = fullname.value.trim();
-  // console.log(fullnameValue)
   const emailValue = email.value.trim();
   const cpfValue = cpf.value.trim();
   const numbercvvValue = numbercvv.value.trim();
   const cardFlagValue = cardFlag.value.trim();
   const shelfLifeValue = shelfLife.value.trim();
 
-  if (fullnameValue === '') {
-    errorValidation(fullname, 'Campo obrigatório!')
+  if (!fullnameValue) {
+    errorValidation(fullname, customMessageErrors.requiredField)
   } else {
     successValidation(fullname)
   }
 
-  if (emailValue === '') {
-    errorValidation(email, 'Campo obrigatório!')
+  if (!emailValue) {
+    errorValidation(email, customMessageErrors.requiredField)
   } else {
     successValidation(email)
   }
 
-  if (cpfValue === '') {
-    errorValidation(cpf, 'Campo obrigatório!')
+  if (!cpfValue) {
+    errorValidation(cpf, customMessageErrors.requiredField)
   } else if (cpfValue.length < 14) {
-    errorValidation(cpf, 'CPF Inválido!')
+    errorValidation(cpf, customMessageErrors.cpfValidation)
   } else {
     successValidation(cpf)
   }
 
-  if (numbercvvValue === '') {
-    errorValidation(numbercvv, 'Campo obrigatório!')
+  if (!numbercvvValue) {
+    errorValidation(numbercvv, customMessageErrors.requiredField)
   } else if (numbercvvValue.length < 3) {
-    errorValidation(numbercvv, 'Padrão inválido para o CVV!')
+    errorValidation(numbercvv, customMessageErrors.invalidCvv)
   } else {
     successValidation(numbercvv)
   }
 
   if (cardFlagValue === 'initial') {
-    errorValidation(cardFlag, 'Selecione uma bandeira!')
+    errorValidation(cardFlag, customMessageErrors.cardFlagInfo)
   } else {
     successValidation(cardFlag)
   }
 
-  if (shelfLifeValue === '') {
-    errorValidation(shelfLife, 'Campo obrigatório!')
+  if (!shelfLifeValue) {
+    errorValidation(shelfLife, customMessageErrors.requiredField)
   } else if (shelfLifeValue.length < 7) {
-    errorValidation(shelfLife, 'Informe o mês e o ano corretamente.')
+    errorValidation(shelfLife, customMessageErrors.shelfLifeValidation)
   } else {
     successValidation(shelfLife)
   }
@@ -142,7 +161,7 @@ function verifyInputs() {
 
 function errorValidation(input, message) {
   const formControl = input.parentElement;
-  // console.log(formControl)
+
   const small = formControl.querySelector('small')
 
   small.innerText = message
@@ -191,7 +210,6 @@ function maskCpf() {
 }
 
 maskCpf();
-
 
 function calculateTotal() {
   const quantity = document.getElementById('quantity')
